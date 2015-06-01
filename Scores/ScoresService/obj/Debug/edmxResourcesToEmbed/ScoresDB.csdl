@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SCORESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BET">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_USER" />
+      <PropertyRef Name="BID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_USER" Type="Int32" Nullable="false" />
+    <Property Name="BID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BETS_MATCHES">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_BET" />
+      <PropertyRef Name="ID_MATCH" />
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_BET" Type="Int32" Nullable="false" />
+    <Property Name="ID_MATCH" Type="Int32" Nullable="false" />
+    <Property Name="TYPE" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LEAGUE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MATCH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="STATUS" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HOME_TEAM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HOME_GOAL" Type="Int32" />
+    <Property Name="GUEST_TEAM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GUEST_GOAL" Type="Int32" />
+    <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ID_ROUND" Type="Int32" />
+    <Property Name="ID_LEAGUE" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TEAM">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="ID_LEAGUE" />
+      <PropertyRef Name="POINTS" />
+      <PropertyRef Name="WIN" />
+      <PropertyRef Name="DRAW" />
+      <PropertyRef Name="LOSE" />
+      <PropertyRef Name="GOAL_SCORED" />
+      <PropertyRef Name="GOAL_CONCEDED" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_LEAGUE" Type="Int32" Nullable="false" />
+    <Property Name="POINTS" Type="Int32" Nullable="false" />
+    <Property Name="WIN" Type="Int32" Nullable="false" />
+    <Property Name="DRAW" Type="Int32" Nullable="false" />
+    <Property Name="LOSE" Type="Int32" Nullable="false" />
+    <Property Name="GOAL_SCORED" Type="Int32" Nullable="false" />
+    <Property Name="GOAL_CONCEDED" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER_MATCH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_MATCH" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_MATCH" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SCORESEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BETS" EntityType="Self.BET" />
+    <EntitySet Name="BETS_MATCHES" EntityType="Self.BETS_MATCHES" />
+    <EntitySet Name="LEAGUEs" EntityType="Self.LEAGUE" />
+    <EntitySet Name="MATCHes" EntityType="Self.MATCH" />
+    <EntitySet Name="TEAMs" EntityType="Self.TEAM" />
+    <EntitySet Name="USER_MATCH" EntityType="Self.USER_MATCH" />
+  </EntityContainer>
+</Schema>

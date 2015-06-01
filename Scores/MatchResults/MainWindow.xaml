@@ -1,0 +1,202 @@
+﻿<RibbonWindow x:Class="MatchResults.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MatchResults.ViewModels"
+        xmlns:v="clr-namespace:MatchResults.Views"
+        Title="LiveScores" Height="300" Width="300"
+              Icon="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico">
+
+    <RibbonWindow.Resources>
+        
+        <DataTemplate DataType="{x:Type vm:LiveMatchesViewModel}">
+            <v:LiveMatchesView />
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type vm:UserMatchesViewModel}">
+            <v:UserMatchesView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:LeagueTableViewModel}">
+            <v:LeagueTablesView />
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:AddLeagueViewModel}">
+            <v:AddLeagueView />
+        </DataTemplate>
+        
+    </RibbonWindow.Resources>
+
+    <Grid>
+
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Ribbon Grid.Row="0" x:Name="RibbonWin"  SelectedIndex="0">
+
+            <!--<Ribbon.HelpPaneContent>
+                <RibbonButton SmallImageSource="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico" />
+            </Ribbon.HelpPaneContent>-->
+
+            <!--<Ribbon.QuickAccessToolBar>
+                <RibbonQuickAccessToolBar>
+                    <RibbonButton x:Name ="TEST" SmallImageSource="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico" />
+                    <RibbonSplitButton x:Name ="test" SmallImageSource="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico">
+                        <RibbonSplitMenuItem Header="TEST" />
+                    </RibbonSplitButton>
+                </RibbonQuickAccessToolBar>
+            </Ribbon.QuickAccessToolBar>-->
+
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu KeyTip="F" SmallImageSource="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico">
+                    <RibbonApplicationMenuItem Header="Options" ImageSource="Icons/1433023412_settings01.png" />
+                    <RibbonApplicationMenuItem Header="Exit" Command="{Binding CloseCommand}" ImageSource="Icons/Oxygen-Icons.org-Oxygen-Actions-application-exit.ico" />
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+
+            <RibbonTab Header="Home" KeyTip="H" >
+
+                <RibbonGroup x:Name="ClipboardGroup" Header="Mathes">
+
+                    <!--<RibbonMenuButton LargeImageSource="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico" Label="test">
+                        <RibbonMenuItem ImageSource="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico" Header="test" KeyTip="T"/>
+                    </RibbonMenuButton>-->
+
+                    <RibbonButton Command="{Binding LiveMatchesCommand}" LargeImageSource="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico" Label="Live" KeyTip="X" />
+                    <RibbonButton Command="{Binding UserMatchesCommand}" LargeImageSource="Icons/binoculars11.png" Label="Observed" KeyTip="C" />
+
+                </RibbonGroup>
+
+                <RibbonGroup x:Name="Employee" Header="League">
+
+
+                    <RibbonButton Command="{Binding LeagueTableCommand}" LargeImageSource="Icons/Icons8-Ios7-Sports-Trophy.ico" Label="Tables" KeyTip="X" />
+                    <RibbonButton Command="{Binding AddLeaguCommand}" LargeImageSource="Icons/Button_Add_Icon_32.png" Label="Add new" KeyTip="C" />
+
+                </RibbonGroup>
+
+            </RibbonTab>
+
+
+        </Ribbon>
+
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding ViewModels}"></ItemsControl>
+
+    </Grid>
+</RibbonWindow>
+
+
+
+
+
+<!--<mui:ModernWindow x:Class="ModernUIForWPFSample.DefaultModernUI.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  Title="Live Scores"
+                  Width="650"
+                  Height="450"
+                  IsTitleVisible="True" Background="AliceBlue">
+
+    <mui:ModernWindow.LinkNavigator>
+        <mui:DefaultLinkNavigator >
+            </mui:DefaultLinkNavigator>
+    </mui:ModernWindow.LinkNavigator>
+    
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Welcome">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="home" />
+                <mui:Link DisplayName="league" Source="Views/Page1.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="Welcome 2">
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="home q" />
+                <mui:Link DisplayName="league q"  />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+
+
+</mui:ModernWindow>-->
+
+<!--<dxr:DXRibbonWindow x:Class="MatchResults.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxr="clr-namespace:DevExpress.Xpf.Ribbon;assembly=DevExpress.Xpf.Ribbon.v14.2"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:vm="clr-namespace:MatchResults.ViewModels"
+        dxc:ThemeManager.ThemeName="Azure" Title="Live Scores" Height="500" Width="600"
+        Icon="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico">
+
+    <dxr:DXRibbonWindow.Resources>
+        <DataTemplate x:Key="Test" DataType="{x:Type vm:MainWindowViewModel}">
+            <ContentControl>
+                <Button Content="TEST" Width="100" Height="200" VerticalAlignment="Top" HorizontalAlignment="Center" Command="{Binding CloseCommand}" />
+            </ContentControl>
+        </DataTemplate>
+    </dxr:DXRibbonWindow.Resources>
+
+    <dxr:DXRibbonWindow.ContentTemplate>
+        <DataTemplate>
+            <ContentControl>
+                <Grid>
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <dxb:BarManager Grid.Row="0" Name="barManager1">
+                        <dxb:BarManager.Items >
+                            <dxb:BarButtonItem Name="bAddLeague" Command="{Binding CloseCommand}" Content="Add League" Glyph="Icons/Button_Add_Icon_32.png" LargeGlyph="Icons/Button_Add_Icon_32.png" />
+                            <dxb:BarButtonItem Name="bLive" Command="{Binding LiveMatch}" Content="Live" Glyph="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico" LargeGlyph="Icons/Chrisbanks2-Cold-Fusion-Hd-Sky-plus-2.ico" />
+                            <dxb:BarButtonItem Name="bClose" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=CloseCommand}" Content="Close" Glyph="Icons/Oxygen-Icons.org-Oxygen-Actions-application-exit.ico" LargeGlyph="Icons/Oxygen-Icons.org-Oxygen-Actions-application-exit.ico" />
+                            <dxb:BarButtonItem Name="bMyMatch" Command="{Binding MyMatch}" Content="My matches" Glyph="Icons/Icons8-Ios7-Sports-Trophy.ico" LargeGlyph="Icons/Icons8-Ios7-Sports-Trophy.ico" />
+                        </dxb:BarManager.Items>
+                        <DockPanel>
+                            <dxr:RibbonControl x:Name="ribbonControl1" DockPanel.Dock="Top" >
+
+                                <dxr:RibbonControl.ApplicationMenu>
+                                    <dxr:ApplicationMenu RightPaneWidth="200">
+                                        <dxr:ApplicationMenu.ItemLinks>
+                                            <dxb:BarItemLink BarItemName="bClose" RibbonStyle="SmallWithText" />
+                                        </dxr:ApplicationMenu.ItemLinks>
+                                    </dxr:ApplicationMenu>
+                                </dxr:RibbonControl.ApplicationMenu>
+
+                                <dxr:RibbonDefaultPageCategory>
+                                    <dxr:RibbonPage Caption="Home">
+                                        <dxr:RibbonPageGroup Name="pMatches" Caption="Matches">
+                                            <dxb:BarItemLink BarItemName="bLive" RibbonStyle="Large" />
+                                            <dxb:BarItemLinkSeparator />
+                                            <dxb:BarItemLink BarItemName="bMyMatch" RibbonStyle="Large" />
+                                        </dxr:RibbonPageGroup>
+                                        <dxr:RibbonPageGroup Name="pLeague" Caption="League">
+                                            <dxb:BarItemLink BarItemName="bAddLeague" RibbonStyle="Large" />
+                                        </dxr:RibbonPageGroup>
+                                    </dxr:RibbonPage>
+                                    <dxr:RibbonPage Caption="Bet">
+                                        <dxr:RibbonPageGroup Name="pBet" Caption="Bet">
+
+                                        </dxr:RibbonPageGroup>
+                                    </dxr:RibbonPage>
+                                </dxr:RibbonDefaultPageCategory>
+
+                            </dxr:RibbonControl>
+
+
+                        </DockPanel>
+                    </dxb:BarManager>
+                    <StackPanel Grid.Row="1" DataContext="{Binding Source={StaticResource Test}}" >
+                    </StackPanel>
+                    
+<ItemsControl Grid.Row="1" DataContext="{StaticResource Test}" />
+
+                </Grid>
+            </ContentControl>
+        </DataTemplate>
+    </dxr:DXRibbonWindow.ContentTemplate>
+</dxr:DXRibbonWindow>-->

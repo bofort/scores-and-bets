@@ -1,0 +1,52 @@
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\MatchResults.exe.config
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\MatchResults.exe
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\MatchResults.pdb
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\AutoMapper.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\Common.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\Common.pdb
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\AutoMapper.xml
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults.csprojResolveAssemblyReference.cache
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\Views\LiveMatchesView.baml
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MainWindow.g.cs
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\Views\LiveMatchesView.g.cs
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\App.g.cs
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults_MarkupCompile.cache
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults_MarkupCompile.lref
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MainWindow.baml
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults.g.resources
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults.Properties.Resources.resources
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults.csproj.GenerateResource.Cache
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults.exe
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\MatchResults\obj\Debug\MatchResults.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\MatchResults.exe.config
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\MatchResults.exe
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\MatchResults.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\AutoMapper.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\Common.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\Common.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\AutoMapper.xml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.csprojResolveAssemblyReference.cache
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\AddLeagueView.baml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\LeagueTablesView.baml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\LiveMatchesView.baml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\UserMatchesView.baml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MainWindow.g.cs
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\AddLeagueView.g.cs
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\LeagueTablesView.g.cs
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\LiveMatchesView.g.cs
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Views\UserMatchesView.g.cs
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\App.g.cs
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults_MarkupCompile.cache
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults_MarkupCompile.lref
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MainWindow.baml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.g.resources
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.Properties.Resources.resources
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.csproj.GenerateResource.Cache
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.exe
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.pdb

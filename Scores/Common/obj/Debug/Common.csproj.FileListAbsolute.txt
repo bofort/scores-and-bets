@@ -1,0 +1,9 @@
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\Common\bin\Debug\Common.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\Common\bin\Debug\Common.pdb
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\Common\obj\Debug\Common.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\Common\obj\Debug\Common.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Common\bin\Debug\Common.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Common\bin\Debug\Common.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Common\obj\Debug\Common.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Common\obj\Debug\Common.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

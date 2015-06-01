@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Common.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Common.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfMATCH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MATCH" nillable="true" type="tns:MATCH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMATCH" nillable="true" type="tns:ArrayOfMATCH" />
+  <xs:complexType name="MATCH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GUEST_GOAL" type="xs:int" />
+      <xs:element minOccurs="0" name="GUEST_TEAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HOME_GOAL" type="xs:int" />
+      <xs:element minOccurs="0" name="HOME_TEAM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_LEAGUE" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_ROUND" type="xs:int" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MATCH" nillable="true" type="tns:MATCH" />
+  <xs:complexType name="ArrayOfBET">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BET" nillable="true" type="tns:BET" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBET" nillable="true" type="tns:ArrayOfBET" />
+  <xs:complexType name="BET">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_USER" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BET" nillable="true" type="tns:BET" />
+  <xs:complexType name="ArrayOfTEAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEAM" nillable="true" type="tns:TEAM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTEAM" nillable="true" type="tns:ArrayOfTEAM" />
+  <xs:complexType name="TEAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DRAW" type="xs:int" />
+      <xs:element minOccurs="0" name="GOAL_CONCEDED" type="xs:int" />
+      <xs:element minOccurs="0" name="GOAL_SCORED" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_LEAGUE" type="xs:int" />
+      <xs:element minOccurs="0" name="LOSE" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POINTS" type="xs:int" />
+      <xs:element minOccurs="0" name="WIN" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TEAM" nillable="true" type="tns:TEAM" />
+  <xs:complexType name="ArrayOfBETS_MATCHES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BETS_MATCHES" nillable="true" type="tns:BETS_MATCHES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBETS_MATCHES" nillable="true" type="tns:ArrayOfBETS_MATCHES" />
+  <xs:complexType name="BETS_MATCHES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_BET" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_MATCH" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPE" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BETS_MATCHES" nillable="true" type="tns:BETS_MATCHES" />
+  <xs:complexType name="ArrayOfLEAGUE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LEAGUE" nillable="true" type="tns:LEAGUE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLEAGUE" nillable="true" type="tns:ArrayOfLEAGUE" />
+  <xs:complexType name="LEAGUE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LINK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LEAGUE" nillable="true" type="tns:LEAGUE" />
+</xs:schema>

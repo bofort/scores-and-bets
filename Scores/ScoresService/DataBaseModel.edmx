@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SCORESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.BETS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BETS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="BID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_USER" Type="int" Nullable="false" />
+          <Property Name="BID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.BETS_MATCHES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BETS_MATCHES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_BET" />
+            <PropertyRef Name="ID_MATCH" />
+            <PropertyRef Name="TYPE" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_BET" Type="int" Nullable="false" />
+          <Property Name="ID_MATCH" Type="int" Nullable="false" />
+          <Property Name="TYPE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LEAGUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LINK" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.MATCH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MATCH">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="STATUS" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOME_TEAM" Type="varchar" MaxLength="100" />
+          <Property Name="HOME_GOAL" Type="int" />
+          <Property Name="GUEST_TEAM" Type="varchar" MaxLength="100" />
+          <Property Name="GUEST_GOAL" Type="int" />
+          <Property Name="STATUS" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DATE" Type="varchar" MaxLength="100" />
+          <Property Name="ID_ROUND" Type="int" />
+          <Property Name="ID_LEAGUE" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.TEAM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="NAME" />
+            <PropertyRef Name="ID_LEAGUE" />
+            <PropertyRef Name="POINTS" />
+            <PropertyRef Name="WIN" />
+            <PropertyRef Name="DRAW" />
+            <PropertyRef Name="LOSE" />
+            <PropertyRef Name="GOAL_SCORED" />
+            <PropertyRef Name="GOAL_CONCEDED" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ID_LEAGUE" Type="int" Nullable="false" />
+          <Property Name="POINTS" Type="int" Nullable="false" />
+          <Property Name="WIN" Type="int" Nullable="false" />
+          <Property Name="DRAW" Type="int" Nullable="false" />
+          <Property Name="LOSE" Type="int" Nullable="false" />
+          <Property Name="GOAL_SCORED" Type="int" Nullable="false" />
+          <Property Name="GOAL_CONCEDED" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_MATCH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_MATCH" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SCORESModelStoreContainer">
+          <EntitySet Name="LEAGUE" EntityType="Self.LEAGUE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_MATCH" EntityType="Self.USER_MATCH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BETS" EntityType="Self.BETS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BETS].[ID] AS [ID], 
+    [BETS].[ID_USER] AS [ID_USER], 
+    [BETS].[BID] AS [BID]
+    FROM [dbo].[BETS] AS [BETS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BETS_MATCHES" EntityType="Self.BETS_MATCHES" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BETS_MATCHES].[ID] AS [ID], 
+    [BETS_MATCHES].[ID_BET] AS [ID_BET], 
+    [BETS_MATCHES].[ID_MATCH] AS [ID_MATCH], 
+    [BETS_MATCHES].[TYPE] AS [TYPE]
+    FROM [dbo].[BETS_MATCHES] AS [BETS_MATCHES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MATCH" EntityType="Self.MATCH" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MATCH].[ID] AS [ID], 
+    [MATCH].[HOME_TEAM] AS [HOME_TEAM], 
+    [MATCH].[HOME_GOAL] AS [HOME_GOAL], 
+    [MATCH].[GUEST_TEAM] AS [GUEST_TEAM], 
+    [MATCH].[GUEST_GOAL] AS [GUEST_GOAL], 
+    [MATCH].[STATUS] AS [STATUS], 
+    [MATCH].[DATE] AS [DATE], 
+    [MATCH].[ID_ROUND] AS [ID_ROUND], 
+    [MATCH].[ID_LEAGUE] AS [ID_LEAGUE]
+    FROM [dbo].[MATCH] AS [MATCH]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TEAM" EntityType="Self.TEAM" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TEAM].[ID] AS [ID], 
+    [TEAM].[NAME] AS [NAME], 
+    [TEAM].[ID_LEAGUE] AS [ID_LEAGUE], 
+    [TEAM].[POINTS] AS [POINTS], 
+    [TEAM].[WIN] AS [WIN], 
+    [TEAM].[DRAW] AS [DRAW], 
+    [TEAM].[LOSE] AS [LOSE], 
+    [TEAM].[GOAL_SCORED] AS [GOAL_SCORED], 
+    [TEAM].[GOAL_CONCEDED] AS [GOAL_CONCEDED]
+    FROM [dbo].[TEAM] AS [TEAM]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SCORESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="USER_MATCH">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_MATCH" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BETS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_USER" />
+            <PropertyRef Name="BID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_USER" Type="Int32" Nullable="false" />
+          <Property Name="BID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BETS_MATCHES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ID_BET" />
+            <PropertyRef Name="ID_MATCH" />
+            <PropertyRef Name="TYPE" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_BET" Type="Int32" Nullable="false" />
+          <Property Name="ID_MATCH" Type="Int32" Nullable="false" />
+          <Property Name="TYPE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LEAGUE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LINK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MATCH">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="STATUS" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOME_TEAM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HOME_GOAL" Type="Int32" />
+          <Property Name="GUEST_TEAM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GUEST_GOAL" Type="Int32" />
+          <Property Name="STATUS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ID_ROUND" Type="Int32" />
+          <Property Name="ID_LEAGUE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="NAME" />
+            <PropertyRef Name="ID_LEAGUE" />
+            <PropertyRef Name="POINTS" />
+            <PropertyRef Name="WIN" />
+            <PropertyRef Name="DRAW" />
+            <PropertyRef Name="LOSE" />
+            <PropertyRef Name="GOAL_SCORED" />
+            <PropertyRef Name="GOAL_CONCEDED" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_LEAGUE" Type="Int32" Nullable="false" />
+          <Property Name="POINTS" Type="Int32" Nullable="false" />
+          <Property Name="WIN" Type="Int32" Nullable="false" />
+          <Property Name="DRAW" Type="Int32" Nullable="false" />
+          <Property Name="LOSE" Type="Int32" Nullable="false" />
+          <Property Name="GOAL_SCORED" Type="Int32" Nullable="false" />
+          <Property Name="GOAL_CONCEDED" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SCORESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="USER_MATCH" EntityType="Self.USER_MATCH" />
+          <EntitySet Name="BETS" EntityType="Self.BETS" />
+          <EntitySet Name="BETS_MATCHES" EntityType="Self.BETS_MATCHES" />
+          <EntitySet Name="LEAGUE" EntityType="Self.LEAGUE" />
+          <EntitySet Name="MATCH" EntityType="Self.MATCH" />
+          <EntitySet Name="TEAM" EntityType="Self.TEAM" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SCORESModelStoreContainer" CdmEntityContainer="SCORESEntities">
+          <EntitySetMapping Name="USER_MATCH">
+            <EntityTypeMapping TypeName="SCORESModel.USER_MATCH">
+              <MappingFragment StoreEntitySet="USER_MATCH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_MATCH" ColumnName="ID_MATCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BETS">
+            <EntityTypeMapping TypeName="SCORESModel.BETS">
+              <MappingFragment StoreEntitySet="BETS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="BID" ColumnName="BID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BETS_MATCHES">
+            <EntityTypeMapping TypeName="SCORESModel.BETS_MATCHES">
+              <MappingFragment StoreEntitySet="BETS_MATCHES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_BET" ColumnName="ID_BET" />
+                <ScalarProperty Name="ID_MATCH" ColumnName="ID_MATCH" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LEAGUE">
+            <EntityTypeMapping TypeName="SCORESModel.LEAGUE">
+              <MappingFragment StoreEntitySet="LEAGUE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="LINK" ColumnName="LINK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATCH">
+            <EntityTypeMapping TypeName="SCORESModel.MATCH">
+              <MappingFragment StoreEntitySet="MATCH">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HOME_TEAM" ColumnName="HOME_TEAM" />
+                <ScalarProperty Name="HOME_GOAL" ColumnName="HOME_GOAL" />
+                <ScalarProperty Name="GUEST_TEAM" ColumnName="GUEST_TEAM" />
+                <ScalarProperty Name="GUEST_GOAL" ColumnName="GUEST_GOAL" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="ID_ROUND" ColumnName="ID_ROUND" />
+                <ScalarProperty Name="ID_LEAGUE" ColumnName="ID_LEAGUE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAM">
+            <EntityTypeMapping TypeName="SCORESModel.TEAM">
+              <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID_LEAGUE" ColumnName="ID_LEAGUE" />
+                <ScalarProperty Name="POINTS" ColumnName="POINTS" />
+                <ScalarProperty Name="WIN" ColumnName="WIN" />
+                <ScalarProperty Name="DRAW" ColumnName="DRAW" />
+                <ScalarProperty Name="LOSE" ColumnName="LOSE" />
+                <ScalarProperty Name="GOAL_SCORED" ColumnName="GOAL_SCORED" />
+                <ScalarProperty Name="GOAL_CONCEDED" ColumnName="GOAL_CONCEDED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

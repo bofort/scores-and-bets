@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ScoresService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:64318/ScoresService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:64318/ScoresService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:64318/ScoresService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Common.DataContracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IScoresService_GetAllMatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMatches" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetAllMatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetLiveMatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiveMatches" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetLiveMatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiveMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetAllBets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBets" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetAllBets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetAllTeams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTeams" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetAllTeams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTeamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetUserMatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserMatches" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetUserMatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetMatchesForBet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchesForBet" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetMatchesForBet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchesForBetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetAllLeagues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLeagues" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetAllLeagues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLeaguesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetBet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBet" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetBet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetLeagueTable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeagueTable" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_GetLeagueTable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeagueTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_AddLeague_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLeague" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_AddLeague_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLeagueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_DeleteLeague_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLeague" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_DeleteLeague_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLeagueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_AddToUserMatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToUserMatches" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_AddToUserMatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToUserMatchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_DeleteFromMyMatches_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromMyMatches" />
+  </wsdl:message>
+  <wsdl:message name="IScoresService_DeleteFromMyMatches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFromMyMatchesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IScoresService">
+    <wsdl:operation name="GetAllMatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetAllMatches" message="tns:IScoresService_GetAllMatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetAllMatchesResponse" message="tns:IScoresService_GetAllMatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLiveMatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetLiveMatches" message="tns:IScoresService_GetLiveMatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetLiveMatchesResponse" message="tns:IScoresService_GetLiveMatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetAllBets" message="tns:IScoresService_GetAllBets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetAllBetsResponse" message="tns:IScoresService_GetAllBets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTeams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetAllTeams" message="tns:IScoresService_GetAllTeams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetAllTeamsResponse" message="tns:IScoresService_GetAllTeams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetUserMatches" message="tns:IScoresService_GetUserMatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetUserMatchesResponse" message="tns:IScoresService_GetUserMatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesForBet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetMatchesForBet" message="tns:IScoresService_GetMatchesForBet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetMatchesForBetResponse" message="tns:IScoresService_GetMatchesForBet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLeagues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetAllLeagues" message="tns:IScoresService_GetAllLeagues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetAllLeaguesResponse" message="tns:IScoresService_GetAllLeagues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetBet" message="tns:IScoresService_GetBet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetBetResponse" message="tns:IScoresService_GetBet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeagueTable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/GetLeagueTable" message="tns:IScoresService_GetLeagueTable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/GetLeagueTableResponse" message="tns:IScoresService_GetLeagueTable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLeague">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/AddLeague" message="tns:IScoresService_AddLeague_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/AddLeagueResponse" message="tns:IScoresService_AddLeague_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeague">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/DeleteLeague" message="tns:IScoresService_DeleteLeague_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/DeleteLeagueResponse" message="tns:IScoresService_DeleteLeague_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToUserMatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/AddToUserMatches" message="tns:IScoresService_AddToUserMatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/AddToUserMatchesResponse" message="tns:IScoresService_AddToUserMatches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromMyMatches">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScoresService/DeleteFromMyMatches" message="tns:IScoresService_DeleteFromMyMatches_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IScoresService/DeleteFromMyMatchesResponse" message="tns:IScoresService_DeleteFromMyMatches_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IScoresService" type="tns:IScoresService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllMatches">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetAllMatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLiveMatches">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetLiveMatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBets">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetAllBets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTeams">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetAllTeams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMatches">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetUserMatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchesForBet">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetMatchesForBet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLeagues">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetAllLeagues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBet">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetBet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeagueTable">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/GetLeagueTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLeague">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/AddLeague" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLeague">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/DeleteLeague" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToUserMatches">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/AddToUserMatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromMyMatches">
+      <soap:operation soapAction="http://tempuri.org/IScoresService/DeleteFromMyMatches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ScoresService">
+    <wsdl:port name="BasicHttpBinding_IScoresService" binding="tns:BasicHttpBinding_IScoresService">
+      <soap:address location="http://localhost:64318/ScoresService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SCORESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.BETS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BETS">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_USER" />
+      <PropertyRef Name="BID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID_USER" Type="int" Nullable="false" />
+    <Property Name="BID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.BETS_MATCHES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BETS_MATCHES">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="ID_BET" />
+      <PropertyRef Name="ID_MATCH" />
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID_BET" Type="int" Nullable="false" />
+    <Property Name="ID_MATCH" Type="int" Nullable="false" />
+    <Property Name="TYPE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LEAGUE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LINK" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.MATCH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MATCH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="STATUS" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HOME_TEAM" Type="varchar" MaxLength="100" />
+    <Property Name="HOME_GOAL" Type="int" />
+    <Property Name="GUEST_TEAM" Type="varchar" MaxLength="100" />
+    <Property Name="GUEST_GOAL" Type="int" />
+    <Property Name="STATUS" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DATE" Type="varchar" MaxLength="100" />
+    <Property Name="ID_ROUND" Type="int" />
+    <Property Name="ID_LEAGUE" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SCORES.dbo.TEAM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TEAM">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="ID_LEAGUE" />
+      <PropertyRef Name="POINTS" />
+      <PropertyRef Name="WIN" />
+      <PropertyRef Name="DRAW" />
+      <PropertyRef Name="LOSE" />
+      <PropertyRef Name="GOAL_SCORED" />
+      <PropertyRef Name="GOAL_CONCEDED" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ID_LEAGUE" Type="int" Nullable="false" />
+    <Property Name="POINTS" Type="int" Nullable="false" />
+    <Property Name="WIN" Type="int" Nullable="false" />
+    <Property Name="DRAW" Type="int" Nullable="false" />
+    <Property Name="LOSE" Type="int" Nullable="false" />
+    <Property Name="GOAL_SCORED" Type="int" Nullable="false" />
+    <Property Name="GOAL_CONCEDED" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USER_MATCH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_MATCH" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SCORESModelStoreContainer">
+    <EntitySet Name="LEAGUE" EntityType="Self.LEAGUE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_MATCH" EntityType="Self.USER_MATCH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BETS" EntityType="Self.BETS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BETS].[ID] AS [ID], 
+    [BETS].[ID_USER] AS [ID_USER], 
+    [BETS].[BID] AS [BID]
+    FROM [dbo].[BETS] AS [BETS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BETS_MATCHES" EntityType="Self.BETS_MATCHES" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BETS_MATCHES].[ID] AS [ID], 
+    [BETS_MATCHES].[ID_BET] AS [ID_BET], 
+    [BETS_MATCHES].[ID_MATCH] AS [ID_MATCH], 
+    [BETS_MATCHES].[TYPE] AS [TYPE]
+    FROM [dbo].[BETS_MATCHES] AS [BETS_MATCHES]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MATCH" EntityType="Self.MATCH" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MATCH].[ID] AS [ID], 
+    [MATCH].[HOME_TEAM] AS [HOME_TEAM], 
+    [MATCH].[HOME_GOAL] AS [HOME_GOAL], 
+    [MATCH].[GUEST_TEAM] AS [GUEST_TEAM], 
+    [MATCH].[GUEST_GOAL] AS [GUEST_GOAL], 
+    [MATCH].[STATUS] AS [STATUS], 
+    [MATCH].[DATE] AS [DATE], 
+    [MATCH].[ID_ROUND] AS [ID_ROUND], 
+    [MATCH].[ID_LEAGUE] AS [ID_LEAGUE]
+    FROM [dbo].[MATCH] AS [MATCH]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TEAM" EntityType="Self.TEAM" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TEAM].[ID] AS [ID], 
+    [TEAM].[NAME] AS [NAME], 
+    [TEAM].[ID_LEAGUE] AS [ID_LEAGUE], 
+    [TEAM].[POINTS] AS [POINTS], 
+    [TEAM].[WIN] AS [WIN], 
+    [TEAM].[DRAW] AS [DRAW], 
+    [TEAM].[LOSE] AS [LOSE], 
+    [TEAM].[GOAL_SCORED] AS [GOAL_SCORED], 
+    [TEAM].[GOAL_CONCEDED] AS [GOAL_CONCEDED]
+    FROM [dbo].[TEAM] AS [TEAM]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

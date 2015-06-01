@@ -1,0 +1,6 @@
+c:\users\michal\documents\visual studio 2013\Scores\Scores\bin\Release\Scores.exe.config
+c:\users\michal\documents\visual studio 2013\Scores\Scores\bin\Release\Scores.exe
+c:\users\michal\documents\visual studio 2013\Scores\Scores\bin\Release\Scores.pdb
+c:\users\michal\documents\visual studio 2013\Scores\Scores\obj\Release\Scores.exe
+c:\users\michal\documents\visual studio 2013\Scores\Scores\obj\Release\Scores.pdb
+C:\Users\Michal\documents\visual studio 2013\Scores\Scores\obj\Release\Scores.csprojResolveAssemblyReference.cache

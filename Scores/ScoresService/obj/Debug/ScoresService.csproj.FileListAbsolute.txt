@@ -1,0 +1,34 @@
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\ScoresService.dll.config
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\ScoresService.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\ScoresService.pdb
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\Common.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\EntityFramework.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\EntityFramework.SqlServer.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\Common.pdb
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\EntityFramework.xml
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\EntityFramework.SqlServer.xml
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\obj\Debug\ScoresService.csprojResolveAssemblyReference.cache
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\obj\Debug\ScoresService.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\obj\Debug\ScoresService.pdb
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\AutoMapper.Net4.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\AutoMapper.dll
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\AutoMapper.pdb
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\AutoMapper.xml
+C:\Users\Michal\Documents\Visual Studio 2013\Scores\ScoresService\bin\AutoMapper.Net4.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\AutoMapper.Net4.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\ScoresService.dll.config
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\ScoresService.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\ScoresService.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\AutoMapper.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\Common.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\EntityFramework.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\EntityFramework.SqlServer.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\Common.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\AutoMapper.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\AutoMapper.xml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\AutoMapper.Net4.pdb
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\EntityFramework.xml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\bin\EntityFramework.SqlServer.xml
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\obj\Debug\ScoresService.csprojResolveAssemblyReference.cache
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\obj\Debug\ScoresService.dll
+C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\ScoresService\obj\Debug\ScoresService.pdb
