@@ -81,6 +81,14 @@ namespace MatchResults.ViewModels
                 .ContinueWith(
                     task =>
                     {
+                        if (task.Exception != null)
+                        {
+                            task.Exception.Handle(x =>
+                            {
+                                Console.WriteLine(x.Message);
+                                return false;
+                            });
+                        }
                         GetMyMatches();
                         IsLoading = false;
                     }, TaskScheduler.FromCurrentSynchronizationContext());
@@ -104,6 +112,14 @@ namespace MatchResults.ViewModels
             .ContinueWith(
                 task =>
                 {
+                    if (task.Exception != null)
+                    {
+                        task.Exception.Handle(x =>
+                        {
+                            Console.WriteLine(x.Message);
+                            return false;
+                        });
+                    }
                     UserMatches = new ObservableCollection<Match>(task.Result.OrderByDescending(m => m.Status));
                     IsLoading = false;
                 }, TaskScheduler.FromCurrentSynchronizationContext());

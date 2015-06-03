@@ -46,8 +46,7 @@ namespace Scores
                 {
                     Task.Delay(30000).Wait();
 
-                    var webClient = new WebClient();
-                    webClient.Encoding = Encoding.UTF8;
+                    var webClient = new WebClient {Encoding = Encoding.UTF8};
 
                     var content = webClient.DownloadString(url);
 

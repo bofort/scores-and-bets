@@ -50,3 +50,9 @@ C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\Mat
 C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.csproj.GenerateResource.Cache
 C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.exe
 C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\MatchResults.pdb
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\MatchResults\bin\Debug\MatchResults.exe.config
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\MatchResults\obj\Debug\MatchResults.exe
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\MatchResults\obj\Debug\MatchResults.pdb
+C:\Users\Michal\Desktop\Projekt.NET\Projekt.NET\Scores\MatchResults\bin\Debug\MatchResults.exe.config
+C:\Users\Michal\Desktop\Projekt.NET\Projekt.NET\Scores\MatchResults\obj\Debug\MatchResults.exe
+C:\Users\Michal\Desktop\Projekt.NET\Projekt.NET\Scores\MatchResults\obj\Debug\MatchResults.pdb

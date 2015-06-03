@@ -122,6 +122,14 @@ namespace MatchResults.ViewModels
                 .ContinueWith(
                     task =>
                     {
+                        if (task.Exception != null)
+                        {
+                            task.Exception.Handle(x =>
+                            {
+                                Console.WriteLine(x.Message);
+                                return false;
+                            });
+                        }
                         GetLeagueList();
                         IsLoading = false;
                     }, TaskScheduler.FromCurrentSynchronizationContext());
@@ -145,6 +153,14 @@ namespace MatchResults.ViewModels
             .ContinueWith(
                 task =>
                 {
+                    if (task.Exception != null)
+                    {
+                        task.Exception.Handle(x =>
+                        {
+                            Console.WriteLine(x.Message);
+                            return false;
+                        });
+                    }
                     LeagueList = new ObservableCollection<League>(task.Result.OrderBy(l => l.Name));
                     IsLoading = false;
                 }, TaskScheduler.FromCurrentSynchronizationContext());

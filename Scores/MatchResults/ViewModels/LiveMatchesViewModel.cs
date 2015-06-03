@@ -91,6 +91,14 @@ namespace MatchResults.ViewModels
                 .ContinueWith(
                     task =>
                     {
+                        if (task.Exception != null)
+                        {
+                            task.Exception.Handle(x =>
+                            {
+                                Console.WriteLine(x.Message);
+                                return false;
+                            });
+                        }
                         IsLoading = false;
                     }, TaskScheduler.FromCurrentSynchronizationContext());
             }

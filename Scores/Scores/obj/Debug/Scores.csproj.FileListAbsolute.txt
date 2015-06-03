@@ -4,3 +4,9 @@ C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Scores\bin\Debug\Scores.pd
 C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Scores\obj\Debug\Scores.csprojResolveAssemblyReference.cache
 C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Scores\obj\Debug\Scores.exe
 C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\Scores\obj\Debug\Scores.pdb
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\Scores\bin\Debug\Scores.exe.config
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\Scores\bin\Debug\Scores.exe
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\Scores\bin\Debug\Scores.pdb
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\Scores\obj\Debug\Scores.csprojResolveAssemblyReference.cache
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\Scores\obj\Debug\Scores.exe
+C:\Users\Michal\Desktop\Nowy folder (2)\Projekt.NET\Scores\Scores\obj\Debug\Scores.pdb

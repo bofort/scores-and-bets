@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\obj\Debug\
+C:\Users\Michal\Desktop\Projekt.NET\Projekt.NET\Scores\MatchResults\obj\Debug\
 MatchResults
 none
 false
 DEBUG;TRACE
-C:\Users\Michal\Desktop\Projekt.NET\LiveScores\Scores\MatchResults\App.xaml
+C:\Users\Michal\Desktop\Projekt.NET\Projekt.NET\Scores\MatchResults\App.xaml
 52079776112
 
 282118836717
-24-1508431276
+241910147146
 MainWindow.xaml;Views\AddLeagueView.xaml;Views\LeagueTablesView.xaml;Views\LiveMatchesView.xaml;Views\UserMatchesView.xaml;
 
 False
