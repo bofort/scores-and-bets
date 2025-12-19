@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EscapeVerse | EV-M365-VERY-HARD-004 | The Invisible Boundary</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#0D1117',
+            surface: '#161B22',
+            primary: '#00E5A8',
+            secondary: '#4CC9F0',
+            error: '#FF4D4D',
+            text: '#E6EDF3'
+          },
+          fontFamily: {
+            heading: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #0D1117;
+      color: #E6EDF3;
+      font-family: 'Inter', system-ui, sans-serif;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .panel {
+      background: #161B22;
+      border: 1px solid rgba(230, 237, 243, 0.08);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+    .log {
+      background: #0D1117;
+      border: 1px solid rgba(230, 237, 243, 0.08);
+    }
+    .badge {
+      border: 1px solid rgba(230, 237, 243, 0.15);
+    }
+    .muted {
+      color: rgba(230, 237, 243, 0.7);
+    }
+  </style>
+</head>
+<body class="h-full min-h-screen text-text">
+  <div class="max-w-6xl mx-auto px-6 py-8 space-y-6">
+    <header class="flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="text-2xl font-heading font-semibold tracking-wide text-primary">EscapeVerse</div>
+        <div class="text-sm text-secondary font-mono">Scenario: EV-M365-VERY-HARD-004</div>
+        <span class="badge px-3 py-1 rounded-full text-xs uppercase font-semibold text-error">Very Hard</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="text-sm text-slate-400 font-mono">System Status:</div>
+        <div id="systemStatus" class="badge px-3 py-1 rounded-full text-xs font-semibold text-primary">ACTIVE</div>
+      </div>
+    </header>
+
+    <section class="panel rounded-xl p-6 space-y-3">
+      <h1 class="text-xl font-heading font-semibold text-primary">The Invisible Boundary</h1>
+      <p class="text-sm text-slate-300 leading-relaxed">Multiple users report intermittent access denial to a SharePoint site. Authentication completes successfully. No explicit authorization failures recorded. Impact is outside the corporate network and only after time has elapsed.</p>
+      <div class="grid md:grid-cols-3 gap-3 text-sm">
+        <div class="bg-canvas rounded-lg p-4 border border-transparent/10">
+          <div class="text-xs uppercase text-slate-400 font-mono mb-1">Signals</div>
+          <ul class="space-y-1 text-slate-200">
+            <li>Access vanishes mid-session</li>
+            <li>No correlated error codes</li>
+            <li>Not reproducible on VPN</li>
+          </ul>
+        </div>
+        <div class="bg-canvas rounded-lg p-4 border border-transparent/10">
+          <div class="text-xs uppercase text-slate-400 font-mono mb-1">Constraints</div>
+          <ul class="space-y-1 text-slate-200">
+            <li>Authentication succeeds</li>
+            <li>ACLs appear intact</li>
+            <li>Users differ by role & device</li>
+          </ul>
+        </div>
+        <div class="bg-canvas rounded-lg p-4 border border-transparent/10">
+          <div class="text-xs uppercase text-slate-400 font-mono mb-1">Environment</div>
+          <ul class="space-y-1 text-slate-200">
+            <li>SPO site: /sites/Boundary</li>
+            <li>CA with session rules</li>
+            <li>Legacy policy fragments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel rounded-xl p-5 space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="font-heading font-semibold text-lg text-primary">System Command Interface</h2>
+        <span class="text-xs text-slate-400 font-mono">AI asks: What do you want to inspect?</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-3 text-sm">
+        <button data-command="logs" class="panel bg-surface rounded-lg p-3 text-left hover:border-primary transition border border-transparent/10">
+          <div class="text-secondary font-semibold">Review sign-in logs</div>
+          <p class="text-xs muted">Query by user, location, or policy reference.</p>
+        </button>
+        <button data-command="ca" class="panel bg-surface rounded-lg p-3 text-left hover:border-primary transition border border-transparent/10">
+          <div class="text-secondary font-semibold">Inspect Conditional Access</div>
+          <p class="text-xs muted">Trace layered policy impact for SPO.</p>
+        </button>
+        <button data-command="session" class="panel bg-surface rounded-lg p-3 text-left hover:border-primary transition border border-transparent/10">
+          <div class="text-secondary font-semibold">Query session/token diagnostics</div>
+          <p class="text-xs muted">Token claims, lifetime, and session rules.</p>
+        </button>
+        <button data-command="sp" class="panel bg-surface rounded-lg p-3 text-left hover:border-primary transition border border-transparent/10">
+          <div class="text-secondary font-semibold">Review SharePoint permissions</div>
+          <p class="text-xs muted">Snapshot of ACL alignment.</p>
+        </button>
+        <button data-command="ps" class="panel bg-surface rounded-lg p-3 text-left hover:border-primary transition border border-transparent/10">
+          <div class="text-secondary font-semibold">Execute audit command</div>
+          <p class="text-xs muted">PowerShell-like drift detection.</p>
+        </button>
+        <button data-command="simulate" class="panel bg-surface rounded-lg p-3 text-left hover:border-primary transition border border-transparent/10">
+          <div class="text-secondary font-semibold">Run access simulation</div>
+          <p class="text-xs muted">Recreate the issue path.</p>
+        </button>
+      </div>
+      <div class="log rounded-lg p-4 h-40 overflow-auto font-mono text-xs leading-relaxed" id="commandFeed"></div>
+    </section>
+
+    <section id="dynamicPanels" class="space-y-4"></section>
+
+    <section class="panel rounded-xl p-5 space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="font-heading font-semibold text-lg text-primary">Configuration Change Workspace</h2>
+        <span class="text-xs text-slate-400 font-mono">Scripted changes only</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-3 text-sm">
+        <div class="bg-canvas rounded-lg p-3 border border-transparent/10 space-y-2">
+          <div class="text-xs text-secondary font-mono">Step 1: Retire legacy token override</div>
+          <p class="text-xs muted">Queue a script that removes the 4h SPO token lifetime object.</p>
+          <button data-script="legacy" class="border border-secondary text-secondary px-3 py-2 rounded hover:bg-secondary/10 transition w-full text-left font-semibold">Queue Remove-LegacyTokenPolicy</button>
+        </div>
+        <div class="bg-canvas rounded-lg p-3 border border-transparent/10 space-y-2">
+          <div class="text-xs text-secondary font-mono">Step 2: Normalize CA session precedence</div>
+          <p class="text-xs muted">Queue a JSON patch that aligns session frequency with modern CA.</p>
+          <button data-script="session" class="border border-secondary text-secondary px-3 py-2 rounded hover:bg-secondary/10 transition w-full text-left font-semibold">Queue Patch-SessionRule</button>
+        </div>
+        <div class="bg-canvas rounded-lg p-3 border border-transparent/10 space-y-2">
+          <div class="text-xs text-secondary font-mono">Step 3: Reconcile drift via audit</div>
+          <p class="text-xs muted">Queue a drift-correction command to reapply baseline.</p>
+          <button data-script="drift" class="border border-secondary text-secondary px-3 py-2 rounded hover:bg-secondary/10 transition w-full text-left font-semibold">Queue Invoke-DriftReconcile</button>
+        </div>
+      </div>
+      <div class="bg-canvas rounded-lg p-3 border border-transparent/10">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs text-slate-400 font-mono">Queued operations (ordered)</span>
+          <button id="clearQueue" class="text-xs text-error border border-error px-2 py-1 rounded hover:bg-error/10 transition">Clear</button>
+        </div>
+        <div id="queueList" class="log rounded p-3 h-28 overflow-auto font-mono text-xs"></div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <button id="applyScripts" class="px-4 py-2 rounded-lg bg-primary text-canvas font-semibold text-sm hover:opacity-90 transition">Apply queued changes</button>
+        <div id="applyStatus" class="text-xs text-slate-400 font-mono">Awaiting sequence...</div>
+      </div>
+    </section>
+
+    <section class="panel rounded-xl p-5 space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="font-heading font-semibold text-lg text-primary">AI System Dialogue</h2>
+        <span class="text-xs text-slate-400 font-mono">Reflective prompts, no answers</span>
+      </div>
+      <div class="bg-canvas rounded-lg p-3 border border-transparent/10 space-y-2">
+        <div id="aiDialogue" class="font-mono text-xs text-slate-200 leading-relaxed">System ready. Choose what to inspect.</div>
+      </div>
+    </section>
+
+    <section class="panel rounded-xl p-5 space-y-3">
+      <div class="flex items-center justify-between">
+        <h2 class="font-heading font-semibold text-lg text-primary">Resolution</h2>
+        <span id="resolutionBadge" class="badge px-3 py-1 rounded-full text-xs font-semibold text-slate-400">In progress</span>
+      </div>
+      <div class="grid md:grid-cols-3 gap-3 text-sm">
+        <div class="bg-canvas rounded-lg p-3 border border-transparent/10">
+          <div class="text-xs text-slate-400 uppercase font-mono mb-1">Outcome</div>
+          <div id="resolutionOutcome" class="font-semibold text-error">Unresolved</div>
+          <p id="resolutionDetail" class="text-xs text-slate-400">Stabilize access, remove overlaps, validate simulation.</p>
+        </div>
+        <div class="bg-canvas rounded-lg p-3 border border-transparent/10">
+          <div class="text-xs text-slate-400 uppercase font-mono mb-1">Skills Assessed</div>
+          <ul class="list-disc list-inside space-y-1 text-xs text-slate-300">
+            <li>System thinking</li>
+            <li>Identity troubleshooting</li>
+            <li>Policy conflict resolution</li>
+            <li>Incident analysis</li>
+          </ul>
+        </div>
+        <div class="bg-canvas rounded-lg p-3 border border-transparent/10">
+          <div class="text-xs text-slate-400 uppercase font-mono mb-1">Status Feed</div>
+          <div id="statusFeed" class="font-mono text-xs text-slate-300 leading-relaxed">Waiting for validated remediation.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // State
+    const commandFeed = document.getElementById('commandFeed');
+    const dynamicPanels = document.getElementById('dynamicPanels');
+    const aiDialogue = document.getElementById('aiDialogue');
+    const queueList = document.getElementById('queueList');
+    const applyStatus = document.getElementById('applyStatus');
+    const resolutionOutcome = document.getElementById('resolutionOutcome');
+    const resolutionDetail = document.getElementById('resolutionDetail');
+    const resolutionBadge = document.getElementById('resolutionBadge');
+    const systemStatus = document.getElementById('systemStatus');
+    const statusFeed = document.getElementById('statusFeed');
+
+    const queue = [];
+    const seenPanels = new Set();
+    const flags = {
+      inspectedLogs: false,
+      inspectedCA: false,
+      inspectedSession: false,
+      inspectedSP: false,
+      inspectedPS: false,
+      ranSimulation: false,
+      condAccessFixed: false,
+      tokenFixed: false,
+      driftResolved: false,
+      validationPassed: false
+    };
+
+    const commandResponses = {
+      logs: {
+        prompt: 'Sign-in logs retrieved. Filter by location or user to see anomalies?',
+        panel: renderLogsPanel
+      },
+      ca: {
+        prompt: 'Conditional Access policies loaded. Which layer matters: location lock, session, or legacy?',
+        panel: renderCAPanel
+      },
+      session: {
+        prompt: 'Token diagnostics show shifts post-authentication. Continue parsing claims?',
+        panel: renderSessionPanel
+      },
+      sp: {
+        prompt: 'Permissions snapshot ready. Looking for what: ACL gaps or policy re-evaluations?',
+        panel: renderSPPanel
+      },
+      ps: {
+        prompt: 'Audit command prepared. Do you expect drift from PowerShell automation?',
+        panel: renderPSPanel
+      },
+      simulate: {
+        prompt: 'Simulation will follow real path outside corp network. Proceed?',
+        panel: renderSimPanel
+      }
+    };
+
+    function appendFeed(text) {
+      const time = new Date().toLocaleTimeString();
+      const entry = document.createElement('div');
+      entry.innerHTML = `<span class="text-secondary">[${time}]</span> <span class="text-slate-200">${text}</span>`;
+      commandFeed.prepend(entry);
+    }
+
+    function setDialogue(text) {
+      aiDialogue.textContent = text;
+    }
+
+    // Panel renderers
+    function renderLogsPanel() {
+      if (seenPanels.has('logs')) return;
+      seenPanels.add('logs');
+      const panel = document.createElement('section');
+      panel.className = 'panel rounded-xl p-5 space-y-3';
+      panel.innerHTML = `
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-semibold text-lg text-primary">Sign-in Log Output</h3>
+          <span class="text-xs text-slate-400 font-mono">Noise expected</span>
+        </div>
+        <div class="log rounded-lg p-4 font-mono text-xs leading-relaxed space-y-2">
+          <div class="text-secondary">user: alex.m | location: PublicNet | result: success | policy: ZT-Network</div>
+          <div class="text-slate-300">user: samira.f | location: PublicNet | result: success | policy: LegacyToken | token_life=4h</div>
+          <div class="text-error">user: rajesh.k | location: PublicNet | result: success | warning: session_reauth_triggered@31m</div>
+          <div class="text-slate-500">user: guest.test | location: Unknown | result: denied | policy: unrelated-guest</div>
+          <div class="text-slate-300">note: no explicit denial; session reset observed without error.</div>
+        </div>
+      `;
+      dynamicPanels.appendChild(panel);
+      flags.inspectedLogs = true;
+      reflectDialogue();
+    }
+
+    function renderCAPanel() {
+      if (seenPanels.has('ca')) return;
+      seenPanels.add('ca');
+      const panel = document.createElement('section');
+      panel.className = 'panel rounded-xl p-5 space-y-3';
+      panel.innerHTML = `
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-semibold text-lg text-primary">Conditional Access Evaluation Trace</h3>
+          <span class="text-xs text-slate-400 font-mono">Layered policies</span>
+        </div>
+        <div class="log rounded-lg p-4 font-mono text-xs leading-relaxed space-y-2">
+          <div class="text-slate-300">Policy: ZT-Network (location) -> requires compliant device outside corp | applies: True</div>
+          <div class="text-slate-300">Policy: SPO-Session-30m -> sign-in frequency 30m | applies: True</div>
+          <div class="text-slate-300">Policy: LegacyTokenOverride -> access token lifetime=4h | applies: True (classic)</div>
+          <div class="text-secondary">Observation: session control and token lifetime overlap; re-auth prompt hits before token renewal.</div>
+          <div class="text-slate-500">Noise: Policy MFA-Bypass-Test excluded users (not in scope).</div>
+        </div>
+      `;
+      dynamicPanels.appendChild(panel);
+      flags.inspectedCA = true;
+      reflectDialogue();
+    }
+
+    function renderSessionPanel() {
+      if (seenPanels.has('session')) return;
+      seenPanels.add('session');
+      const panel = document.createElement('section');
+      panel.className = 'panel rounded-xl p-5 space-y-3';
+      panel.innerHTML = `
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-semibold text-lg text-primary">Token / Session Claim Dump</h3>
+          <span class="text-xs text-slate-400 font-mono">Abstracted view</span>
+        </div>
+        <div class="log rounded-lg p-4 font-mono text-xs leading-relaxed space-y-2">
+          <div class="text-slate-300">prt_status: valid | device_compliance: mixed | network: PublicNet</div>
+          <div class="text-error">refresh_token: expires_in=4h (legacy override)</div>
+          <div class="text-secondary">session_control: sign_in_frequency=30m | persistent: false</div>
+          <div class="text-slate-300">claim: insideCorp=false | deviceTrust=partial | auth_time=00:12:41 ago</div>
+          <div class="text-slate-500">noise: atp_risk=low; mdm_recheck_in=8h.</div>
+        </div>
+      `;
+      dynamicPanels.appendChild(panel);
+      flags.inspectedSession = true;
+      reflectDialogue();
+    }
+
+    function renderSPPanel() {
+      if (seenPanels.has('sp')) return;
+      seenPanels.add('sp');
+      const panel = document.createElement('section');
+      panel.className = 'panel rounded-xl p-5 space-y-3';
+      panel.innerHTML = `
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-semibold text-lg text-primary">SharePoint Permission Snapshot</h3>
+          <span class="text-xs text-slate-400 font-mono">Resource: /sites/Boundary</span>
+        </div>
+        <div class="log rounded-lg p-4 font-mono text-xs leading-relaxed space-y-2">
+          <div class="text-secondary">Group: Boundary-Collaborators -> role: Edit -> status: OK</div>
+          <div class="text-secondary">Group: Boundary-Reviewers -> role: Read -> status: OK</div>
+          <div class="text-slate-500">ACL noise: archived guest link present (not used).</div>
+          <div class="text-error">Note: Permissions stable; failures tied to re-evaluation mid-session.</div>
+        </div>
+      `;
+      dynamicPanels.appendChild(panel);
+      flags.inspectedSP = true;
+      reflectDialogue();
+    }
+
+    function renderPSPanel() {
+      if (seenPanels.has('ps')) return;
+      seenPanels.add('ps');
+      const panel = document.createElement('section');
+      panel.className = 'panel rounded-xl p-5 space-y-3';
+      panel.innerHTML = `
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-semibold text-lg text-primary">PowerShell Audit Output</h3>
+          <span class="text-xs text-slate-400 font-mono">Automation drift</span>
+        </div>
+        <div class="log rounded-lg p-4 font-mono text-xs leading-relaxed space-y-2">
+          <div class="text-secondary">Command: Get-SPOConditionalAccessBaseline -Site /sites/Boundary</div>
+          <div class="text-slate-300">Result: baseline_session_frequency=8h | baseline_token_life=default</div>
+          <div class="text-error">Drift detected: LegacyTokenOverride active (source: classic policy import)</div>
+          <div class="text-slate-500">Noise: audit trail shows previous operator test policy removed.</div>
+        </div>
+      `;
+      dynamicPanels.appendChild(panel);
+      flags.inspectedPS = true;
+      reflectDialogue();
+    }
+
+    function renderSimPanel() {
+      if (seenPanels.has('simulate')) return;
+      seenPanels.add('simulate');
+      const panel = document.createElement('section');
+      panel.className = 'panel rounded-xl p-5 space-y-3';
+      panel.innerHTML = `
+        <div class="flex items-center justify-between">
+          <h3 class="font-heading font-semibold text-lg text-primary">Access Simulation</h3>
+          <span class="text-xs text-slate-400 font-mono">Outside corp network</span>
+        </div>
+        <div class="log rounded-lg p-4 font-mono text-xs leading-relaxed space-y-2" id="simulationLog">
+          <div class="text-secondary">Step 1: Auth -> success | MFA satisfied.</div>
+          <div class="text-secondary">Step 2: Token issued | lifetime=4h | session control=30m.</div>
+          <div class="text-error">Step 3: At 32m: session re-evaluation triggers; token renewal denied by lifetime rule.</div>
+          <div class="text-slate-500">Noise: optional cookie refresh bypassed (ignored).</div>
+        </div>
+        <button id="rerunSimulation" class="mt-2 px-3 py-2 rounded border border-primary text-primary text-xs font-semibold hover:bg-primary/10 transition">Re-run with current configuration</button>
+      `;
+      dynamicPanels.appendChild(panel);
+      flags.ranSimulation = true;
+      reflectDialogue();
+      document.getElementById('rerunSimulation').addEventListener('click', rerunSimulation);
+    }
+
+    // Command handling
+    document.querySelectorAll('[data-command]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cmd = btn.dataset.command;
+        const response = commandResponses[cmd];
+        appendFeed(response.prompt);
+        response.panel();
+      });
+    });
+
+    // AI dialogue adaptation
+    function reflectDialogue() {
+      if (flags.inspectedSP && flags.inspectedCA && !flags.inspectedSession) {
+        setDialogue('You confirmed access control. What about session behavior mid-life?');
+        return;
+      }
+      if (flags.inspectedSession && !flags.inspectedPS) {
+        setDialogue('Session data shows lifetime tension. Did automation import a legacy rule?');
+        return;
+      }
+      if (flags.inspectedPS && !flags.ranSimulation) {
+        setDialogue('You saw drift evidence. Will you simulate to observe the impact?');
+        return;
+      }
+      if (flags.ranSimulation && !(flags.condAccessFixed && flags.tokenFixed && flags.driftResolved)) {
+        setDialogue('Simulation reproduced instability. What sequence of changes restores order?');
+        return;
+      }
+      if (flags.validationPassed) {
+        setDialogue('Stability confirmed. Observe for any silent regressions.');
+        return;
+      }
+      setDialogue('System ready. Choose the next surface to inspect.');
+    }
+
+    // Queue handling
+    document.querySelectorAll('[data-script]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const script = btn.dataset.script;
+        queue.push(script);
+        renderQueue();
+        applyStatus.textContent = 'Sequence queued. Apply when ready.';
+      });
+    });
+
+    document.getElementById('clearQueue').addEventListener('click', () => {
+      queue.length = 0;
+      renderQueue();
+      applyStatus.textContent = 'Queue cleared.';
+    });
+
+    function renderQueue() {
+      if (!queue.length) {
+        queueList.innerHTML = '<div class="text-slate-500">No operations queued.</div>';
+        return;
+      }
+      queueList.innerHTML = queue.map((q, idx) => `<div class="text-slate-200">[${idx + 1}] ${labelScript(q)}</div>`).join('');
+    }
+
+    function labelScript(key) {
+      if (key === 'legacy') return 'Remove-LegacyTokenPolicy { resource: SPO; scope: Boundary }';
+      if (key === 'session') return 'Patch-SessionRule { signInFrequency: 8h; persistent: true }';
+      if (key === 'drift') return 'Invoke-DriftReconcile { enforceBaseline: true }';
+      return key;
+    }
+
+    // Apply scripts logic
+    document.getElementById('applyScripts').addEventListener('click', () => {
+      if (!queue.length) {
+        applyStatus.textContent = 'No operations queued.';
+        return;
+      }
+      const sequence = queue.join('>');
+      const correctOrder = queue[0] === 'legacy' && queue[1] === 'session' && queue[2] === 'drift' && queue.length === 3;
+      flags.tokenFixed = queue.includes('legacy');
+      flags.condAccessFixed = queue.includes('session');
+      flags.driftResolved = queue.includes('drift');
+
+      if (correctOrder) {
+        applyStatus.textContent = 'Changes applied coherently. Session controls now govern token life.';
+        statusFeed.textContent = 'Policies aligned; awaiting validation simulation.';
+      } else if (flags.tokenFixed && flags.condAccessFixed && flags.driftResolved) {
+        applyStatus.textContent = 'Changes applied but order was suboptimal. Re-evaluate with simulation.';
+        statusFeed.textContent = 'Possible residual drift; re-run simulation.';
+      } else {
+        applyStatus.textContent = 'Application incomplete. Missing required operations.';
+        statusFeed.textContent = 'Stability not assured.';
+      }
+      queue.length = 0;
+      renderQueue();
+      reflectDialogue();
+    });
+
+    // Simulation rerun logic
+    function rerunSimulation() {
+      const log = document.getElementById('simulationLog');
+      log.innerHTML = '';
+      const steps = [];
+      steps.push('<div class="text-secondary">Step 1: Auth -> success | MFA satisfied.</div>');
+      if (flags.tokenFixed && flags.condAccessFixed) {
+        steps.push('<div class="text-secondary">Step 2: Token issued | lifetime aligned to session | session control=8h persistent.</div>');
+        if (flags.driftResolved) {
+          steps.push('<div class="text-primary">Step 3: At 32m: session persists; token renews; access stable.</div>');
+          flags.validationPassed = true;
+          finalizeResolution();
+        } else {
+          steps.push('<div class="text-error">Step 3: Drift remains; inconsistent renewal observed.</div>');
+          flags.validationPassed = false;
+        }
+      } else {
+        steps.push('<div class="text-error">Step 2: Legacy lifetime still applied; session control overridden.</div>');
+        steps.push('<div class="text-error">Step 3: Re-auth loop persists.</div>');
+        flags.validationPassed = false;
+      }
+      steps.push('<div class="text-slate-500">Noise: optional cookie refresh bypassed (ignored).</div>');
+      log.innerHTML = steps.join('');
+      reflectDialogue();
+    }
+
+    function finalizeResolution() {
+      resolutionOutcome.textContent = 'Resolved';
+      resolutionOutcome.className = 'font-semibold text-primary';
+      resolutionDetail.textContent = 'Session-level conflict cleared; legacy overlap removed; drift reconciled. Simulation stable.';
+      resolutionBadge.textContent = 'Resolved';
+      resolutionBadge.className = 'badge px-3 py-1 rounded-full text-xs font-semibold text-primary';
+      systemStatus.textContent = 'RESOLVED';
+      systemStatus.className = 'badge px-3 py-1 rounded-full text-xs font-semibold text-primary';
+      statusFeed.textContent = 'Access stable outside corp network; monitor silently for regression.';
+    }
+
+    // Initialize
+    renderQueue();
+    appendFeed('System ready. What do you want to inspect?');
+  </script>
+</body>
+</html>
